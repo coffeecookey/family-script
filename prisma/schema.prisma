@@ -104,10 +104,6 @@ model User {
   notifications Notification[]
   auditLogs     AuditLog[]
   errorLogs     ErrorLog[]
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
   @@index([status])
   @@map("user")
 }
@@ -715,19 +711,7 @@ model Notification {
 
   createdAt DateTime @default(now())
 
-<<<<<<< Updated upstream
-  // =====================================================
-  // RELATIONS
-  // =====================================================
-
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  // =====================================================
-  // INDEXES
-  // =====================================================
-=======
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
->>>>>>> Stashed changes
 
   @@index([userId])
   @@index([type])
@@ -760,19 +744,7 @@ model AuditLog {
 
   createdAt DateTime @default(now())
 
-<<<<<<< Updated upstream
-  // =====================================================
-  // RELATIONS
-  // =====================================================
-
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  // =====================================================
-  // INDEXES
-  // =====================================================
-=======
-  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
->>>>>>> Stashed changes
 
   @@index([userId])
   @@index([action])
@@ -822,19 +794,7 @@ model ErrorLog {
 
   createdAt DateTime @default(now())
 
-<<<<<<< Updated upstream
-  // =====================================================
-  // RELATIONS
-  // =====================================================
-
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  // =====================================================
-  // INDEXES
-  // =====================================================
-=======
-  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
->>>>>>> Stashed changes
 
   @@index([userId])
   @@index([severity])
